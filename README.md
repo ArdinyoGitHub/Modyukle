@@ -29,7 +29,7 @@ modyukle modrinth,github new_mod ~/new_mod-1.0.0-neoforge-26.1.2.jar --prova
 - `--prova` (dry run): creates and uploads nothing, only shows what would happen. Running `modyukle` with no arguments prints help and the known projects.
 - `--incele` (review): submit a draft Modrinth project for review without asking.
 - Other flags: `--kaynak=<workspace>` (commit the mod source to the GitHub repo before the release), `--dosya-adi=<name.jar>` (upload under a different file name), `--etiket=<tag>` (GitHub tag, default `v<version>`).
-- Other commands: `modyukle sayfa <project>` (update the Nexus page description), `modyukle kaynak <project> <workspace>` (push source code to GitHub only).
+- Other commands: `modyukle readme <project>` (write the GitHub README + repo description from `aciklamalar/<project>.txt`; also done automatically on every GitHub upload, hand-edited READMEs are left alone unless `--evet`), `modyukle sayfa <project>` (update the Nexus page description), `modyukle kaynak <project> <workspace>` (push source code to GitHub only).
 
 **If the project doesn't exist yet**, it is created: a draft on Modrinth (asks for description/category/license) and a repo on GitHub.
 **If it exists**, only the new version is uploaded; a platform where that version already exists is skipped.
