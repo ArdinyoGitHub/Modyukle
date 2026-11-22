@@ -1,8 +1,8 @@
-# OPSİYONEL — şu an kullanılmıyor (yerel yükleme seçildi).
-# İleride GitHub'ın derleyip yüklemesi istenirse: repoda .github/workflows/publish.yml olarak koy,
-# CURSEFORGE_TOKEN ve MODRINTH_TOKEN'ı repo Settings → Secrets → Actions'a ekle.
-# publishMods.gradle bloğu aynen kalır. Changelog CHANGELOG.md'deki "## <sürüm>" bölümünden alınır.
-# Tetikleme: git tag v1.2.0 && git push --tags
+# OPTIONAL — currently unused (local uploading was chosen).
+# If GitHub should build and upload in the future: put it in the repo as .github/workflows/publish.yml,
+# add CURSEFORGE_TOKEN and MODRINTH_TOKEN under repo Settings → Secrets → Actions.
+# The publishMods.gradle block stays as is. The changelog is taken from the "## <version>" section of CHANGELOG.md.
+# Trigger: git tag v1.2.0 && git push --tags
 
 name: Publish
 

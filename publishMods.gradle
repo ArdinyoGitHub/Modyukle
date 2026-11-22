@@ -1,12 +1,12 @@
-// Mod Publish Plugin ayarları — elle yazılmış (MCreator OLMAYAN) Gradle projeleri için.
-// MCreator modları için bunun yerine yukleyici/ klasörünü kullan (MCreator build.gradle'ı ezer).
-// Belge: https://modmuss50.github.io/mod-publish-plugin/
-// Not: Eklentinin 2.x sürümleri Gradle 9+ ister. Gradle daha eskiyse '1.1.0' kullan.
+// Mod Publish Plugin settings — for hand-written (NON-MCreator) Gradle projects.
+// For MCreator mods use the yukleyici/ folder instead (MCreator overwrites build.gradle).
+// Docs: https://modmuss50.github.io/mod-publish-plugin/
+// Note: plugin 2.x needs Gradle 9+. With older Gradle use '1.1.0'.
 
-// DİKKAT: Bu satırı build.gradle'daki MEVCUT plugins { } bloğunun İÇİNE ekle,
-// ikinci bir plugins bloğu açma. Bu dosya 'apply from:' ile kullanılamaz, elle yapıştır.
+// WARNING: add the plugin line INSIDE the EXISTING plugins { } block of build.gradle,
+// do not open a second plugins block. This file can't be used with 'apply from:', paste it by hand.
 plugins {
-    // ...mevcut eklentiler...
+    // ...existing plugins...
     id 'me.modmuss50.mod-publish-plugin' version '2.2.1'
 }
 
