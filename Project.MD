@@ -19,6 +19,8 @@ MCreator ile yapılan modları tek komutla CurseForge + Modrinth + GitHub Releas
 
 - 2026-11-22: Araç adı "Modyukle" (EN/TR aynı). Git deposu ~/Projects/mcmodplan, GitHub: ArdinyoGitHub/Modyukle (private).
 
+- 2026-11-22: Araç adı "Modyukle" (EN/TR aynı). Git deposu ~/Projects/mcmodplan, GitHub: ArdinyoGitHub/Modyukle (private).
+
 ## En son nerede kaldık (2026-11-22)
 - Sıradaki: kullanıcı mchol Nexus sayfasını sitede açınca `modyukle sayfa mchol --prova` ile önizle, sonra gerçek gönder; ardından `modyukle nexus mchol <jar> --prova` ile dosya yüklemeyi dene. Nexus tarafı hiç gerçek hesapla denenmedi.
 - GUI hazır; kullanıcının ekranda deneyip geri bildirim vermesi bekleniyor (gerçek yükleme GUI'den denenmedi).
