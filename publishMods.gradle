@@ -21,7 +21,7 @@ publishMods {
     type = mod_version.contains('alpha') ? ALPHA : mod_version.contains('beta') ? BETA : STABLE
     modLoaders.add('neoforge')
 
-    // -PdryRun verilirse ya da tokenlardan BİRİ bile eksikse hiçbir şey yüklemez, sadece prova yapar
+    // With -PdryRun, or if ANY token is missing, nothing is uploaded (dry run only)
     dryRun = providers.gradleProperty('dryRun').isPresent() ||
              tokenlar.any { providers.environmentVariable(it).getOrNull() == null }
 
@@ -29,13 +29,13 @@ publishMods {
         projectId = '000000'            // CurseForge proje ID'n
         accessToken = providers.environmentVariable('CURSEFORGE_TOKEN')
         minecraftVersions.add(minecraft_version)
-        // requires('slug')  // bağımlılık örneği
+        // requires('slug')  // dependency example
     }
     modrinth {
         projectId = 'XXXXXXXX'          // Modrinth proje ID'n
         accessToken = providers.environmentVariable('MODRINTH_TOKEN')
         minecraftVersions.add(minecraft_version)
-        // requires('slug')  // bağımlılık örneği
+        // requires('slug')  // dependency example
     }
     github {
         repository = 'KULLANICI/REPO'
