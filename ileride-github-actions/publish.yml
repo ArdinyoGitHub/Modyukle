@@ -1,0 +1,63 @@
+# OPSİYONEL — şu an kullanılmıyor (yerel yükleme seçildi).
+# İleride GitHub'ın derleyip yüklemesi istenirse: repoda .github/workflows/publish.yml olarak koy,
+# CURSEFORGE_TOKEN ve MODRINTH_TOKEN'ı repo Settings → Secrets → Actions'a ekle.
+# publishMods.gradle bloğu aynen kalır. Changelog CHANGELOG.md'deki "## <sürüm>" bölümünden alınır.
+# Tetikleme: git tag v1.2.0 && git push --tags
+
+name: Publish
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Read version info
+        id: props
+        run: |
+          prop() { grep -E "^$1=" gradle.properties | cut -d= -f2- | tr -d '[:space:]'; }
+          echo "mod_version=$(prop mod_version)" >> "$GITHUB_OUTPUT"
+          JAVA=$(grep -oP 'JavaLanguageVersion\.of\(\K[0-9]+' build.gradle | head -1)
+          echo "java=${JAVA:-21}" >> "$GITHUB_OUTPUT"
+
+      - name: Check tag matches mod_version
+        run: |
+          TAG="${GITHUB_REF_NAME#v}"
+          if [ "$TAG" != "${{ steps.props.outputs.mod_version }}" ]; then
+            echo "::error::Tag ($TAG) does not match mod_version (${{ steps.props.outputs.mod_version }})"
+            exit 1
+          fi
+
+      - name: Build changelog
+        run: |
+          VER="${{ steps.props.outputs.mod_version }}"
+          if [ -f CHANGELOG.md ]; then
+            awk -v v="$VER" '/^## /{ if (f) exit; f = ($2 == v || $2 == "["v"]"); next } f' CHANGELOG.md > changelog.txt
+          fi
+          if [ ! -s changelog.txt ]; then
+            PREV=$(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || true)
+            git log -n 30 --pretty='- %s' ${PREV:+$PREV..}HEAD > changelog.txt
+          fi
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ steps.props.outputs.java }}
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Build and publish
+        run: chmod +x gradlew && ./gradlew build publishMods
+        env:
+          CURSEFORGE_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
+          MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

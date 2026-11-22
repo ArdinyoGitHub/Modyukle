@@ -1,0 +1,7 @@
+yukleyici/build/
+yukleyici/.gradle/
+__pycache__/
+*.pyc
+*.yedek
+*.jar
+.env

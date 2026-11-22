@@ -1,0 +1,42 @@
+Short description: Rip and tear: 49 demons, Doom weapons, Crucible gear, guitars and the Doom Hell dimension.
+---
+# MCDOOM (ardimastered)
+
+A big Doom mod for Minecraft. It combines my own Doom mod (LQDM) with **MCDoom by AzureDoom**, updated to Minecraft 26.1.2.
+
+## Demons
+Around 50 demons in four tiers:
+- **Fodder**: Imp, Zombieman, Possessed Soldier, Shotgun Guy, Chaingunner, Lost Soul, Gargoyle, Mecha Zombie...
+- **Heavy**: Cacodemon, Pinky, Revenant, Mancubus, Hell Knight, Arachnotron, Pain Elemental, Whiplash...
+- **Super heavy**: Baron of Hell, Cyberdemon, Marauder, Arch-Vile, Doom Hunter, Summoner...
+- **Bosses**: Icon of Sin, Spider Mastermind, Gladiator, Mother Demon, Arch Maykr
+
+## Weapons
+- MCDoom's 3D animated guns (shotguns, BFG, chaingun, plasma rifle, rocket launcher, Unmaykr and more), crafted at the **Gun Table**
+- **Crucible** gear: swords, blades, axes, halberds and a pickaxe
+- Chainsaws, the Sentinel Hammer, the Doom Blade and the Marauder Axe
+- Guitars: Crucible, Hell, Slayer Tech, Cultist, Maykr and Ancient Sentinel
+- Eternal Pistol and Toxic Shooter
+- Meathook
+
+## Armor
+Doom Slayer armor sets including Classic Doom Marine, Midnight, Praetor Crimson and many MCDoom skins.
+
+## Doom Hell
+A hellish dimension full of demons. Use `/doomhell` to travel there and back.
+
+## Also included
+Doom ore, Argent energy, demon meat, villager trades, chest loot and music discs.
+
+## Requirements
+- NeoForge for Minecraft 26.1.2
+- [AzureLib](https://modrinth.com/mod/azurelib)
+- [Common Networking](https://www.curseforge.com/minecraft/mc-mods/common-networking) (by Jaredlll08)
+- [SmartBrainLib](https://modrinth.com/mod/smartbrainlib)
+
+## Credits and license
+Includes **[MCDoom](https://modrinth.com/mod/mcdoom) by AzureDoom**, licensed under
+[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/), ported to 26.1.2 and merged with LQDM.
+This mod is distributed under the same license: free, non-commercial.
+
+*Not affiliated with or endorsed by id Software or Bethesda. Doom belongs to its respective owners.*

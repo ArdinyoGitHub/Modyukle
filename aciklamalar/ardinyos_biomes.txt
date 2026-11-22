@@ -1,0 +1,26 @@
+Short description: Five colorful biomes, the Prism Dimension and nine new wood types.
+---
+# Ardinyo's Biomes
+
+Adds five colorful biomes, a new dimension and nine new wood types to Minecraft.
+
+## Biomes
+- **Violet**: purple skies, amethyst clusters, chorus patches and crying obsidian
+- **Crimson**: red forests with lava lakes and striders
+- **Emerald**: emerald veins, slime pools, mossy ruins and frogs
+- **Midas**: golden trees, dry grass, camels and ocelots
+- **Allay**: frosty blue forests with extra lapis and diamond ore, allays and pitcher plants
+
+The biomes generate in the Overworld (via TerraBlender) and in the **Prism Dimension**.
+
+## Prism Dimension
+Build a portal frame out of **Block of Paradise** and light it with the **Prism Dimension Portal Igniter**.
+Paradise Ore is mined to craft the frame blocks.
+
+## Wood types
+Cherry, Crimson, Dust, Emeralld, Ender, Midas, Midnight, Skyface and Sunny, each with logs, wood, planks,
+leaves, stairs, slabs, fences, fence gates, buttons and pressure plates.
+
+## Requirements
+- NeoForge for Minecraft 26.1.2
+- [TerraBlender](https://modrinth.com/mod/terrablender)

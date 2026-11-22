@@ -1,0 +1,37 @@
+Short description: Survive on planet 4546B: an underwater world with Subnautica-style biomes, creatures and vehicles.
+---
+# Minautica
+
+An unofficial, fan-made mod inspired by **Subnautica**. Travel through the portal to **planet 4546B**, an ocean world.
+
+## Planet 4546B
+- A whole new dimension of clear, fog-free ocean
+- Biomes follow depth bands like the original: **Safe Shallows** (down to 20 m) and **Kelp Forest** (down to 100 m)
+- Get there through the **4546B Portal**
+
+## Seafloor
+Coral, Table Coral, limestone and sandstone outcrops, quartz, lithium, acid mushrooms, blood kelp, blue palms,
+veined nettle, writhing weed and many types of sand and moss.
+
+## Creatures
+- **Crashfish**: be careful, they explode on contact
+
+## Vehicles
+- **Seamoth**
+- **Cyclops**
+
+## Materials
+Titanium, copper, silver, gold, lead, lithium, quartz and crafting parts like wiring kits, computer chips,
+batteries and power cells.
+
+## Requirements
+- NeoForge for Minecraft 26.1.2
+
+## Credits
+This mod includes MIT-licensed content from:
+- [Lost River](https://github.com/saddydead1/lostriver) by SaddyDEAD: blocks, plants, worldgen, Seamoth, Cyclops and material textures
+- [Crashfish Mod](https://modrinth.com/mod/crashfish-mod) by Cosmizy: the Crashfish
+
+The full list is in THIRD_PARTY_LICENSES.md inside the mod.
+
+*Minautica is a fan project and is not affiliated with or endorsed by Unknown Worlds Entertainment. Subnautica belongs to its respective owners.*

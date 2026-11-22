@@ -1,0 +1,24 @@
+Short description: Find a glowing cave crystal and gain its power: stop time, or win any creature to your side.
+---
+# The Artifacts
+
+Deep in the caves grow two glowing crystals. Walk close to one and it drives itself into your chest,
+giving you its power for good. Each player can hold only **one** artifact, so choose wisely.
+
+## Green Artifact: Time
+- **[V] Stop time** for 15 seconds (30 second cooldown). You can move freely. You also take no fall damage while time is stopped.
+- **Electric shock**: creatures you touch or hit are shocked
+- **Charged punch**: hold **[G]** with an empty hand to charge a critical punch
+
+## Pink Artifact: Charm
+- **[V]** For 5 seconds your fists glow pink. Every creature you punch **joins your side** (the punch deals no damage)
+- Allies follow you and defend you. Tameable animals like wolves, cats and horses become real pets
+- You regenerate rapidly, and so do nearby allies
+- Bosses resist your influence
+
+## Saved from death
+Both artifacts work like a **Totem of Undying**, once. When you would die, the crystal shatters and saves you.
+After that its power is gone, and you can find a new crystal.
+
+## Requirements
+- NeoForge for Minecraft 26.1.2

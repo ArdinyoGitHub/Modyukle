@@ -1,0 +1,26 @@
+Short description: Sculk tools, a sculk dimension, Sculk Sickness and 14 new sculk creatures.
+---
+# Extended Sculks
+
+Takes the sculk of the Deep Dark much further: new materials, tools, creatures and a whole sculk dimension.
+
+## Sculk Dimension
+A dark dimension with two biomes, **JES** and the **Sculk Forest**, full of sculk trees and lakes of **Sculk Fluid**.
+Open the portal with the **Sculk Dimension Portal Igniter**.
+
+## Creatures
+14 new mobs, including the Sculk Demon, Aura of the Dark, Soul Blaster, Lurker, Sculk Monster, Sculk Owl,
+Ender Sculk, Depth, Sculk Head, Warden Biped and Wayfinder.
+
+## Gear
+- **Sculk Ingot**, Catalystick and Integrity Fragment
+- Sculk Sword, Pickaxe, Axe, Shovel, Hoe and a Sculk Combat Axe
+- **Hard Sculk** block
+
+## Sculk Sickness
+A new status effect. Be careful around the sculk.
+
+All items are in their own **Sculks** creative tab.
+
+## Requirements
+- NeoForge for Minecraft 26.1.2

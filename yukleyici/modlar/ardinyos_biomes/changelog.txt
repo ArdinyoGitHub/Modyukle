@@ -1,0 +1,3 @@
+- First Modrinth release
+- Five biomes: Violet, Crimson, Emerald, Midas, Allay
+- Prism Dimension

@@ -1,0 +1,46 @@
+// Mod Publish Plugin ayarları — elle yazılmış (MCreator OLMAYAN) Gradle projeleri için.
+// MCreator modları için bunun yerine yukleyici/ klasörünü kullan (MCreator build.gradle'ı ezer).
+// Belge: https://modmuss50.github.io/mod-publish-plugin/
+// Not: Eklentinin 2.x sürümleri Gradle 9+ ister. Gradle daha eskiyse '1.1.0' kullan.
+
+// DİKKAT: Bu satırı build.gradle'daki MEVCUT plugins { } bloğunun İÇİNE ekle,
+// ikinci bir plugins bloğu açma. Bu dosya 'apply from:' ile kullanılamaz, elle yapıştır.
+plugins {
+    // ...mevcut eklentiler...
+    id 'me.modmuss50.mod-publish-plugin' version '2.2.1'
+}
+
+publishMods {
+    def changelogDosyasi = project.file('changelog.txt')
+    def tokenlar = ['CURSEFORGE_TOKEN', 'MODRINTH_TOKEN', 'GITHUB_TOKEN']
+
+    file = jar.archiveFile
+    displayName = "${mod_name} ${mod_version}"
+    version = mod_version
+    changelog = changelogDosyasi.exists() && changelogDosyasi.text.trim() ? changelogDosyasi.text : "${mod_name} ${mod_version}"
+    type = mod_version.contains('alpha') ? ALPHA : mod_version.contains('beta') ? BETA : STABLE
+    modLoaders.add('neoforge')
+
+    // -PdryRun verilirse ya da tokenlardan BİRİ bile eksikse hiçbir şey yüklemez, sadece prova yapar
+    dryRun = providers.gradleProperty('dryRun').isPresent() ||
+             tokenlar.any { providers.environmentVariable(it).getOrNull() == null }
+
+    curseforge {
+        projectId = '000000'            // CurseForge proje ID'n
+        accessToken = providers.environmentVariable('CURSEFORGE_TOKEN')
+        minecraftVersions.add(minecraft_version)
+        // requires('slug')  // bağımlılık örneği
+    }
+    modrinth {
+        projectId = 'XXXXXXXX'          // Modrinth proje ID'n
+        accessToken = providers.environmentVariable('MODRINTH_TOKEN')
+        minecraftVersions.add(minecraft_version)
+        // requires('slug')  // bağımlılık örneği
+    }
+    github {
+        repository = 'KULLANICI/REPO'
+        accessToken = providers.environmentVariable('GITHUB_TOKEN')
+        commitish = 'main'
+        tagName = "v${mod_version}"
+    }
+}

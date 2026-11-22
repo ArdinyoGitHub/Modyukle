@@ -1,0 +1,80 @@
+// Yükleme motoru. Doğrudan değil, modyukle.py üzerinden çağrılır:
+//   modyukle <platform> <proje> <jar>
+// modyukle.py jar'ın içinden bilgileri okur, projeleri gerekirse oluşturur ve buraya -P ile geçirir.
+// Proje ID'leri: modlar/<proje>/ayarlar.properties   Değişiklik notu: modlar/<proje>/changelog.txt
+
+plugins {
+    id 'me.modmuss50.mod-publish-plugin' version '2.2.1'
+}
+
+def p = { String ad ->
+    def v = providers.gradleProperty(ad).getOrNull()
+    if (v == null) throw new GradleException("Eksik -P${ad}. Bu dosyayı doğrudan değil 'modyukle' ile çalıştır.")
+    v
+}
+def modAdi = p('mod')
+def jar = new File(p('jar'))
+def gorunenAd = p('ad')
+def modSurumu = p('surum')
+def mcSurumu = p('mc')
+def yukleyiciTuru = p('yukleyici_turu')
+def sadeceSunucu = providers.gradleProperty('sadece_sunucu').getOrElse('false') == 'true'
+
+def modKlasoru = file("modlar/${modAdi}")
+def ayar = new Properties()
+new File(modKlasoru, 'ayarlar.properties').withReader('UTF-8') { ayar.load(it) }
+def changelogDosyasi = new File(modKlasoru, 'changelog.txt')
+def changelogMetni = changelogDosyasi.exists() ? changelogDosyasi.getText('UTF-8').trim() : ''
+
+def cfId = ayar.getProperty('curseforge_id', '').trim()
+def mrId = ayar.getProperty('modrinth_id', '').trim()
+def ghRepo = ayar.getProperty('github_repo', '').trim()
+def gerekli = ayar.getProperty('gerekli', '').tokenize(',')*.trim()
+def istegeBagli = ayar.getProperty('istege_bagli', '').tokenize(',')*.trim()
+
+def ghToken = providers.environmentVariable('GITHUB_TOKEN').orElse(providers.provider {
+    try {
+        def pr = ['gh', 'auth', 'token'].execute()
+        pr.waitFor() == 0 ? pr.text.trim() : null
+    } catch (ignored) { null }
+})
+
+publishMods {
+    file = layout.file(providers.provider { jar })
+    displayName = "${gorunenAd} ${modSurumu}"
+    version = modSurumu
+    changelog = changelogMetni ?: "${gorunenAd} ${modSurumu}"
+    type = modSurumu.contains('alpha') ? ALPHA : modSurumu.contains('beta') ? BETA : STABLE
+    modLoaders.add(yukleyiciTuru)
+    dryRun = providers.gradleProperty('dryRun').isPresent()
+
+    if (cfId) {
+        curseforge {
+            projectId = cfId
+            accessToken = providers.environmentVariable('CURSEFORGE_TOKEN')
+            minecraftVersions.add(mcSurumu)
+            clientRequired = !sadeceSunucu
+            serverRequired = true
+            // CurseForge slug'ları Modrinth'tekinden farklı olabilir (örn. terrablender-neoforge)
+            ayar.getProperty('gerekli_curseforge', '').tokenize(',')*.trim().each { requires(it) }
+            ayar.getProperty('istege_bagli_curseforge', '').tokenize(',')*.trim().each { optional(it) }
+        }
+    }
+    if (mrId) {
+        modrinth {
+            projectId = mrId
+            accessToken = providers.environmentVariable('MODRINTH_TOKEN')
+            minecraftVersions.add(mcSurumu)
+            gerekli.each { requires(it) }
+            istegeBagli.each { optional(it) }
+        }
+    }
+    if (ghRepo) {
+        github {
+            repository = ghRepo
+            accessToken = ghToken
+            commitish = ayar.getProperty('github_dal', 'main')
+            tagName = providers.gradleProperty('etiket').getOrElse("v${modSurumu}")
+        }
+    }
+}

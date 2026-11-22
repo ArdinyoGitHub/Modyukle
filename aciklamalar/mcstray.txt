@@ -1,0 +1,50 @@
+Short description: A fan-made Stray mod: an underground walled city, your drone B-12, robot companions, Zurgs and the Defluxor.
+---
+# MCSTRAY
+
+An unofficial, fan-made mod inspired by **Stray**. Bring the robot city and its dangers into Minecraft.
+
+## Walled City 99
+Every world hides one huge underground city, sealed under a concrete dome. It is an original city inspired by the real Kowloon Walled City (not a copy of the game's map).
+- **Midtown**: the upper level, with streets, plazas and neon lights
+- **The Slums**: the lower level right along the great wall
+- **Dead City**: the rest of the lower level, overrun by Zurgs, with a huge Zurg-infested tower at its heart
+- Get in through the hole at the top of the dome
+- Broken robots lie around the city, waiting to be found
+
+## Finding the City
+- Villages may have a **Sweeper 457** robot. Talk to it to get a **Distress Receiver**
+- The receiver points to the Walled City and beeps faster as you get closer
+- Inside the city, it leads you to the nearest broken robot
+
+## B-12
+Your smart drone companion.
+- Bring a **Broken Robot** to Doc to have it repaired into B-12
+- B-12 follows you and teleports to you if it falls behind
+- B-12 has its own inventory. Only its owner can open it or interact with it
+- Sneak + right-click to pick B-12 back up. Anything it carries drops on the ground
+- Doc can fit B-12 with a **Defluxor**. B-12 can then shine UV light on Zurgs and defend you
+
+## Robots
+- **Doc**: runs a shop (Defluxor, B-12 repair, B-12 Defluxor upgrade) and fights Zurgs with his own Defluxor
+- **Seamus** and **Momo**: friendly robots
+- **Sentinels**: security robots that fire at intruders
+
+## Weapons
+- **Defluxor**: hold right-click to cast a wide UV light on floors, walls and ceilings. Zurgs caught in it are wiped out, and undead burn
+- **Sentinel Blaster**: sometimes dropped by Sentinels. A long-range stun gun: its electric beam stuns the target for a few seconds without knocking it back
+
+## Zurgs
+- Swarming **Zurgs** that hatch from **Zurg Eggs** and spread the **Zurg Virus**. Some of them are small
+- They attack anything that is not a Zurg, and only fear light
+- Zurg Flesh can be cooked (or burnt)
+
+## Zurg Dimension
+A dimension infested with Zurgs, with three Zurgland biomes. Open the portal with the Zurgdimesion Portal Igniter.
+
+All items are in the **Stray** creative tab.
+
+## Requirements
+- NeoForge for Minecraft 26.3
+
+*MCSTRAY is a fan project and is not affiliated with or endorsed by BlueTwelve Studio or Annapurna Interactive. Stray and its characters belong to their respective owners.*

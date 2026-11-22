@@ -1,0 +1,24 @@
+Short description: 16 new foods, from cakes and chocolate to Turkish street-food sandwiches.
+---
+# Ardinyo's Dishes
+
+Adds 16 new foods to Minecraft, inspired by home cooking and Turkish street food. Every dish has a crafting recipe.
+
+## Cakes
+- Apple Cake
+- Sweet Berry Cake
+- Carrot Cake
+- Golden Carrot Cake
+
+## Sweets
+- Chocolate and Melted Chocolate
+- Kaymak (Turkish clotted cream)
+- Bread with Kaymak and Honey
+
+## Street food
+- **Balık Ekmek**: the famous Istanbul fish sandwich
+- Sandwiches with fries, chicken, meatballs (köfte), mutton, pork or rabbit
+- Chicken Nuggets
+
+## Requirements
+- NeoForge for Minecraft 26.1.2

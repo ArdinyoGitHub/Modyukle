@@ -1,0 +1,24 @@
+Short description: Journey to the Wither Dimension: withered lands, castles, towers, Nether Star ore and Wither gear.
+---
+# Wither Legacy
+
+Opens the way to the **Wither Dimension**, a dark land where the Wither's power grows out of the ground.
+
+## Wither Dimension
+- Three biomes: **Wither**, **Blue Wither** and **Purple Wither**
+- Wither Soil in three colors and Wither Stone
+- **Wither Castles** and **Wither Towers** to explore
+- Open the portal with the Witherdimension Portal Igniter
+
+## Resources
+- **Nether Star Ore**: mine Nether Stars without fighting the Wither
+- Wither plants and the **Wither Fruit**
+- Nether Stick
+
+## Gear
+- Wither Sword, Pickaxe, Axe and Shovel
+- Bıçak (knife)
+- Full Wither armor set
+
+## Requirements
+- NeoForge for Minecraft 26.1.2
